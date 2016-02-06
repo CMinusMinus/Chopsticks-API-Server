@@ -12,6 +12,9 @@ var port = process.env.PORT || 8080;        // set our port
 
 // ROUTES FOR OUR API
 // =============================================================================
+var bodyParser = require('body-parser');
+
+app.use(bodyParser);
 var gameState = {
     player1: {
         token: 8383333,
