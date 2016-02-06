@@ -39,6 +39,7 @@ router.post('/turn',function(req, res) {
 
 router.get('/player', function(req, res){
 	res.json(gameState);
+	console.log("We got a post request over here");
 });
 
 // REGISTER OUR ROUTES -------------------------------
