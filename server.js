@@ -14,7 +14,8 @@ var port = process.env.PORT || 8080;        // set our port
 // =============================================================================
 var bodyParser = require('body-parser');
 
-app.use(bodyParser);
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 var gameState = {
     player1: {
@@ -37,8 +38,9 @@ router.use(function(req, res, next) {
     next(); // make sure we go to the next routes and don't stop here
 });
 
-router.get('/turn',function(req, res) {
+router.post('/turn',function(req, res) {
     gameState = req.body;
+    console.log(req.body);
     var temp = gameState.me;
     gameState.me = gameState.opponent;
     gameState.opponent = temp;
