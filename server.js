@@ -13,16 +13,16 @@ var port = process.env.PORT || 8080;        // set our port
 // ROUTES FOR OUR API
 // =============================================================================
 var gameState = {
-	player1: {
-		token: 8383333,
-		left: 1,
-		right: 1
-	},
-	player2: {
-		token: 8290202,
-		left: 1,
-		right: 1
-	}
+    player1: {
+        token: 8383333,
+        left: 1,
+        right: 1
+    },
+    player2: {
+        token: 8290202,
+        left: 1,
+        right: 1
+    }
 }
 
 var router = express.Router();
@@ -34,12 +34,12 @@ router.use(function(req, res, next) {
 });
 
 router.post('/turn',function(req, res) {
-	gameState = req.body.data;
+    gameState = req.body.data;
 });
 
 router.get('/player', function(req, res){
-	res.json(gameState);
-	console.log("We got a post request over here");
+    res.json(gameState);
+    console.log("We got a post request over here");
 });
 
 // REGISTER OUR ROUTES -------------------------------
