@@ -38,7 +38,7 @@ router.use(function(req, res, next) {
 });
 
 router.post('/turn',function(req, res) {
-    gameState = req.body.data;
+    gameState = req.body;
     var temp = gameState.me;
     gameState.me = gameState.opponent;
     gameState.opponent = temp;
