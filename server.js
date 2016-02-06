@@ -33,7 +33,7 @@ router.use(function(req, res, next) {
     next(); // make sure we go to the next routes and don't stop here
 });
 
-router.post('/turn',function(req, res) {
+router.put('/turn',function(req, res) {
     gameState = req.body.data;
     var temp = gameState.me;
     gameState.me = gameState.opponent;
