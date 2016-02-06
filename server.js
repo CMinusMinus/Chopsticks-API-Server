@@ -35,11 +35,15 @@ router.use(function(req, res, next) {
 
 router.post('/turn',function(req, res) {
     gameState = req.body.data;
+    var temp = gameState.me;
+    gameState.me = gameState.opponent;
+    gameState.opponent = temp;
+    console.log("We got a post request over here");
 });
 
 router.get('/player', function(req, res){
     res.json(gameState);
-    console.log("We got a post request over here");
+    console.log("We got a get request over here");
 });
 
 // REGISTER OUR ROUTES -------------------------------
