@@ -49,7 +49,7 @@ router.post('/turn',function(req, res) {
 
 router.get('/player', function(req, res){
     //res.json(gameState);
-    res.sendStatus(200);
+    res.status(200).send("OK");
     console.log("We got a get request over here");
 });
 
